@@ -1,47 +1,59 @@
+{
 
-console.log("Jaki kod wariacie?");
-
-let formElement = document.querySelector(".js-form");
-
-let amountElement = document.querySelector(".js-user__amount");
-let currencyElement = document.querySelector(".js-user__ownedCurrency");
-let wantedElement = document.querySelector(".js-user__wantedCurrency");
-
-let finalElement = document.querySelector(".js-user__finalExchange");
-
-let zloty = 1.00;
-let dollars = 4.97;
-let euro = 4.84;
-
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+    console.log("Jaki kod wariacie?");
 
 
-    let currency = currencyElement.value;
-    let wanted = wantedElement.value;
-    let amount = amountElement.value;
+    const calucatedResult = (amount, currency) => {
+        const rateFunt = 5.2727;
+        const rateDollars = 4.9797;
+        const rateEuro = 4.8484;
+
+        switch (currency) {
+            case "funt":
+                return amount / rateFunt;
 
 
-    switch (currency) {
-        case "zloty":
-            if (wanted === "zloty") result = (amount * 1)
-            else if (wanted === "dollars") result = (amount / dollars)
-            else if (wanted === "euro") result = (amount / euro)
-            break;
+            case "dollars":
+                return amount / rateDollars;
 
-        case "dollars":
-            if (wanted === "dollars") result = (amount * 1)
-            else if (wanted === "zloty") result = (amount * dollars)
-            else if (wanted === "euro") result = (amount * dollars / euro)
-            break;
 
-        case "euro":
-            if (wanted === "euro") result = (amount * 1)
-            else if (wanted === "zloty") result = (amount * euro)
-            else if (wanted === "dollars") result = (amount * euro / dollars)
-            break;
+            case "euro":
+                return amount / rateEuro;
+
+
+        }
     }
-    
-    finalElement.innerHTML = result.toFixed(2);
-})
 
+    const updateResultText = (amount, result, currency) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
+
+    }
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+
+        const amountElement = document.querySelector(".js-user__amount");
+        const currencyElement = document.querySelector(".js-user__currency");
+
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
+
+        const result = calucatedResult(amount, currency);
+
+        updateResultText(amount, result, currency);
+
+    }
+
+
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", onFormSubmit);
+    };
+
+    init();
+
+}

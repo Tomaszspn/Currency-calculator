@@ -1,0 +1,33 @@
+.form__legend {
+    background-color: rgb(81, 203, 252);
+    color: #fdfdfd;
+    font-weight: 700;
+    border: 1px solid #147147;
+    text-align: left;
+    letter-spacing: 2px;
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+
+.form__currency {
+    width: 250px;
+    max-width: 75%;
+    display: inline-block;
+    margin-right: 5px;  
+    line-height: 55px;
+    text-align: center;
+}
+.form__button {
+  size-adjust: 100px;
+  width: 75%;
+  padding:0px;
+  margin-top: 20px;
+  font-weight:bolder
+}    
+
+.form__button:hover {
+  background-color: #ccc;
+
+}
