@@ -22,11 +22,11 @@
 
     <form class="js-form">
         <fieldset class="fieldset">
-            <legend class="form__legend">Kalkulator Walut</legend>
+            <legend class="form__legend ">Kalkulator Walut</legend>
             <p>
                 Kwota w złotówkach:
             </p>
-            <input class="js-user__amount" type="number" min="1" placeholder="Wpisz kwotę">
+            <input class="js-user__amount form__amount" type="number" min="1" placeholder="Wpisz kwotę">
 
             <div>
                 <label>Waluta wymiany</label>
@@ -41,8 +41,9 @@
                 <button class="form__button"> Przewalutuj </button>
             </div>
 
-            <div>
-                <span>Otrzymamy:<strong class="js-result">N/A</strong></span>
+            <div class="result">
+                <p>Otrzymamy</p>
+                <span><strong class="js-result">N/A</strong></span>
             </div>
             </p>
 

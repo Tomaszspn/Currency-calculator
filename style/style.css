@@ -10,20 +10,19 @@ html {
 
 .body {
   font-family: 'Lato', sans-serif;
-  padding: 5px 20px;
-  margin: 7px auto;
-  max-width: 700px;
+  margin: 20px;
+  max-width: 500px;
 }
 
 .fieldset {
-  background-color: rgb(128, 218, 253);
+  background: linear-gradient(180deg, rgb(2, 154, 192), white);
   border: 1px solid #ccc;
   padding: 10px;
   max-width: 150px;
   border-radius: 5px;
-  margin: 0 auto;
   text-align: left;
   line-height: 30px;
   font-weight: bold;
 
 }
+
