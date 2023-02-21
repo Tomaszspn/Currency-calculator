@@ -15,7 +15,7 @@ html {
 }
 
 .fieldset {
-  background: linear-gradient(180deg, rgb(2, 154, 192), white);
+  background-image: url("../Images/background-image.jpg");
   border: 1px solid #ccc;
   padding: 10px;
   max-width: 150px;
